@@ -1,6 +1,6 @@
 class Game < Gosu::Window
-  def initialize
-    super(640, 480, false)
+  def initialize(x,y)
+    super(x, y, false)
     self.caption = "Let's play a game!"
  
     @background_image = Gosu::Image.new("public/Space.png", {})
@@ -23,8 +23,12 @@ class Game < Gosu::Window
   end
  
   def draw
+    xsize = @background_image.width
+    ysize = @background_image.height
+    xscale = width/xsize
+    yscale = height/ysize
     @player.draw
-    @background_image.draw(0,0,0)
+    @background_image.draw(0,0,0,xscale,yscale)
   end
 
    def button_down(id)

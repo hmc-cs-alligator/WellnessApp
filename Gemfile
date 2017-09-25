@@ -21,6 +21,10 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'gosu'
 
+gem 'jquery-rails'
+
+gem 'bootstrap-sass', '~> 3.3.6'
+
 gem 'devise'
 
 # Use CoffeeScript for .coffee assets and views

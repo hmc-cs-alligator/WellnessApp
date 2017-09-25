@@ -1,0 +1,43 @@
+<h1>New Game</h1>
+<%= form_with scope: :game_holder, url: game_holders_path do |form| %>
+
+  <% if @game_holder.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@game_holder.errors.count, "error") %> prohibited
+        this game from being made:
+      </h2>
+      <ul>
+        <% @game_holder.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.label :title %><br> 
+    <%= form.text_field(:title) %>
+  </p>
+
+  <p>
+    <%= form.label :x %><br> 
+    <%= form.text_field(:x) %>
+  </p>
+
+  <p>
+    <%= form.label :y %><br> 
+    <%= form.text_field(:y) %>
+  </p>
+ 
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p> 
+<% end %>
+
+<%= link_to 'Back', game_holders_path %>

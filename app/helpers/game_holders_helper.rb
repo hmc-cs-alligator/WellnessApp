@@ -1,0 +1,2 @@
+module GameHoldersHelper
+end
